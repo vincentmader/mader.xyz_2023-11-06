@@ -1,0 +1,11 @@
+<html>
+
+<head>
+    <title> Rocket Server </title>
+</head>
+
+<body>
+    {{ msg }}
+</body>
+
+</html>
