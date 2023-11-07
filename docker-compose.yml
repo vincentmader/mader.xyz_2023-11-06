@@ -7,7 +7,7 @@ services:
     ports:
       - 8002:8000
     environment:
-      VIRTUAL_HOST: server.localhost.lo     
+      VIRTUAL_HOST: server.mader.xyz, server.localhost.lo
       LETSENCRYPT_HOST: server.mader.xyz
       LETSENCRYPT_EMAIL: vincent.mader@icloud.com
     networks:
@@ -19,7 +19,7 @@ services:
     ports:
       - 8003:8080
     environment:
-      VIRTUAL_HOST: client.localhost.lo
+      VIRTUAL_HOST: client.mader.xyz, client.localhost.lo
       LETSENCRYPT_HOST: client.mader.xyz
       LETSENCRYPT_EMAIL: vincent.mader@icloud.com
     networks:
