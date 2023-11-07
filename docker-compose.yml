@@ -1,0 +1,33 @@
+version: "3.3"
+
+services:
+  mxyz-server:
+    build: ./src/server
+    restart: always
+    ports:
+      - 8100:8000
+    environment:
+      VIRTUAL_HOST: server.localhost.lo     
+      LETSENCRYPT_HOST: server.mader.xyz
+      LETSENCRYPT_EMAIL: vincent.mader@icloud.com
+    networks:
+      - reverse-proxy
+
+  mxyz-client:
+    build: ./src/client
+    restart: always
+    ports:
+      - 8180:8080
+    environment:
+      VIRTUAL_HOST: client.localhost.lo
+      LETSENCRYPT_HOST: client.mader.xyz
+      LETSENCRYPT_EMAIL: vincent.mader@icloud.com
+    networks:
+      - reverse-proxy
+
+networks:
+  reverse-proxy:
+    external: true
+    name: proxy_mxyz_proxy_network 
+    # ^ This has to be the same name as specified in `./proxy/docker-compose.yml`.
+    #   Additionally, it is prefixed by the proxy directory name (see "docker network ls").

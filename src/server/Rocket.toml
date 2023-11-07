@@ -1,0 +1,8 @@
+[global]
+port = 8000
+
+[release]
+address = "0.0.0.0"
+
+[debug]
+address = "127.0.0.1"
