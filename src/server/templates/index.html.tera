@@ -1,12 +1,14 @@
 <html>
 
 <head>
-    <title> Rocket Server </title>
+    <title> {{ msg }} </title>
     <link rel="stylesheet" type="text/css" href="css/index.css">
 </head>
 
 <body>
-    {{ msg }}
+    <div id="welcome-container" class="centering-container">
+        <h1 id="welcome-text"> {{ msg }} </h1>
+    </div>
 </body>
 
 </html>

@@ -6,7 +6,7 @@ use rocket_dyn_templates::{context, Template};
 
 #[get("/")]
 fn index() -> Template {
-    Template::render("index", context! { msg: "Hello, rocket server!" })
+    Template::render("index", context! { msg: "server.mader.xyz" })
 }
 
 #[get("/hello/<name>/<age>")]
